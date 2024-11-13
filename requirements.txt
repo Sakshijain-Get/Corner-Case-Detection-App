@@ -1,0 +1,8 @@
+torch
+requests
+ultralytics
+streamlit
+supervision
+opencv-python-headless
+pillow
+numpy
