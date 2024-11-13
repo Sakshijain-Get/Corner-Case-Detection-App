@@ -124,7 +124,7 @@ uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg
 
 if uploaded_file is not None:
     # Save the uploaded file to a local path
-    temp_dir = "/content/temp_images"
+    temp_dir = "/temp_images"
     os.makedirs(temp_dir, exist_ok=True)
     image_path = os.path.join(temp_dir, uploaded_file.name)
     
