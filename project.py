@@ -2,20 +2,6 @@ import os
 import cv2
 import subprocess
 import requests
-# Clone and install SAM2 if not already present
-if not os.path.exists("segment-anything-2"):
-    # Clone the repository
-    subprocess.run(["git", "clone", "https://github.com/facebookresearch/segment-anything-2.git"], check=True)
-    
-    # Change the directory to `segment-anything-2`
-    os.chdir("segment-anything-2")
-    
-    # Install SAM2 in editable mode
-    subprocess.run(["pip", "install", "-e", "."], check=True)
-    
-    # Change back to the root directory of the app
-    os.chdir("..")
-    
 import torch
 import numpy as np
 from PIL import Image
@@ -24,6 +10,11 @@ from ultralytics import YOLO
 from sam2.build_sam import build_sam2
 from sam2.sam2_image_predictor import SAM2ImagePredictor
 import supervision as sv
+
+# Clone and install SAM2 if not already present
+if not os.path.exists("segment-anything-2"):
+    subprocess.run(["git", "clone", "https://github.com/facebookresearch/segment-anything-2.git"], check=True)
+    subprocess.run(["pip", "install", "-e", "segment-anything-2"], check=True)
 
 class YOLO_Detector:
     def __init__(self, model_path):
