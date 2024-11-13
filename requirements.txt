@@ -1,8 +1,9 @@
-opencv-python-headless
+opencv-python
 torch
 numpy
 Pillow
 streamlit
 ultralytics
 supervision
+requests
 hydra-core
