@@ -116,10 +116,10 @@ sam2_checkpoint_path = "https://drive.google.com/uc?export=download&id=1VFKc2sl-
 
 if not os.path.exists("best.pt"):
     print("Downloading YOLO model...")
-    download_file(yolo_model_url, "best.pt")
+    download_file(yolo_model_path, "best.pt")
 if not os.path.exists("sam2_hiera_large.pt"):
     print("Downloading SAM2 checkpoint...")
-    download_file(sam2_checkpoint_url, "sam2_hiera_large.pt")
+    download_file(sam2_checkpoint_path, "sam2_hiera_large.pt")
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg"])
 
 if uploaded_file is not None:
