@@ -110,7 +110,7 @@ def download_file(url, dest_path):
     response = requests.get(url, stream=True)
     with open(dest_path, 'wb') as f:
         f.write(response.content)
-yolo_model_path = "/https://drive.google.com/uc?export=download&id=1PUsCi1AKuuFxFsbM2kWGIMvlmeC4jMoD"
+yolo_model_path = "https://drive.google.com/uc?export=download&id=1PUsCi1AKuuFxFsbM2kWGIMvlmeC4jMoD"
 sam2_config_path = "sam2_hiera_l.yaml"
 sam2_checkpoint_path = "https://drive.google.com/uc?export=download&id=1VFKc2sl-pGhdz5-FKQ8ZkajQRBeLPHQB"
 
