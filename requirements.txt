@@ -5,4 +5,4 @@ torch
 opencv-python
 Pillow
 numpy
-git+https://github.com/facebookresearch/segment-anything-2.git@main#egg=sam2
+
