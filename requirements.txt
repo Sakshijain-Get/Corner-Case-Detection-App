@@ -1,10 +1,8 @@
-opencv-python
-torch
-numpy
-Pillow
 streamlit
 ultralytics
 supervision
-requests
-hydra-core
-git+https://github.com/facebookresearch/segment-anything-2.git
+torch
+opencv-python
+Pillow
+numpy
+git+https://github.com/facebookresearch/segment-anything-2.git@main#egg=sam2
