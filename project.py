@@ -11,11 +11,6 @@ from sam2.build_sam import build_sam2
 from sam2.sam2_image_predictor import SAM2ImagePredictor
 import supervision as sv
 
-# Clone and install SAM2 if not already present
-if not os.path.exists("segment-anything-2"):
-    subprocess.run(["git", "clone", "https://github.com/facebookresearch/segment-anything-2.git"], check=True)
-    subprocess.run(["pip", "install", "-e", "segment-anything-2"], check=True)
-
 class YOLO_Detector:
     def __init__(self, model_path):
         self.model_path = model_path
@@ -101,16 +96,9 @@ def download_file(url, dest_path):
     response = requests.get(url, stream=True)
     with open(dest_path, 'wb') as f:
         f.write(response.content)
-yolo_model_path = "https://drive.google.com/uc?export=download&id=1PUsCi1AKuuFxFsbM2kWGIMvlmeC4jMoD"
+yolo_model_path = "weights/Yolo/Yolov10m_best.pt"
 sam2_config_path = "sam2_hiera_l.yaml"
 sam2_checkpoint_path = "/app/checkpoints/sam2_hiera_large.pt"
-
-if not os.path.exists("best.pt"):
-    print("Downloading YOLO model...")
-    download_file(yolo_model_path, "best.pt")
-if not os.path.exists("sam2_hiera_large.pt"):
-    print("Downloading SAM2 checkpoint...")
-    download_file(sam2_checkpoint_path, "sam2_hiera_large.pt")
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg"])
 
 if uploaded_file is not None:
