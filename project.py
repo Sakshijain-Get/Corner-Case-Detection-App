@@ -98,7 +98,7 @@ def download_file(url, dest_path):
         f.write(response.content)
 yolo_model_path = "weights/Yolo/Yolov10m_best.pt"
 sam2_config_path = "sam2_hiera_l.yaml"
-sam2_checkpoint_path = "/checkpoints/sam2_hiera_large.pt"
+sam2_checkpoint_path = "content/checkpoints/sam2_hiera_large.pt"
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg"])
 
 if uploaded_file is not None:
