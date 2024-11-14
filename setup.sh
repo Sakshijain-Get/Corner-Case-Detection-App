@@ -1,6 +1,6 @@
 git clone https://github.com/facebookresearch/segment-anything-2.git
 cd segment-anything-2
-pip install -e .
+!pip install -e . -q
 
 # Create checkpoints folder and download SAM2 model weights
 mkdir -p /app/checkpoints
