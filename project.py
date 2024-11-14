@@ -103,7 +103,7 @@ def download_file(url, dest_path):
         f.write(response.content)
 yolo_model_path = "https://drive.google.com/uc?export=download&id=1PUsCi1AKuuFxFsbM2kWGIMvlmeC4jMoD"
 sam2_config_path = "sam2_hiera_l.yaml"
-sam2_checkpoint_path = "https://drive.google.com/uc?export=download&id=1VFKc2sl-pGhdz5-FKQ8ZkajQRBeLPHQB"
+sam2_checkpoint_path = "/app/checkpoints/sam2_hiera_large.pt"
 
 if not os.path.exists("best.pt"):
     print("Downloading YOLO model...")
