@@ -10,6 +10,9 @@ from ultralytics import YOLO
 from sam2.build_sam import build_sam2
 from sam2.sam2_image_predictor import SAM2ImagePredictor
 import supervision as sv
+import os
+import gdown
+os.system('pip install gdown')
 
 class YOLO_Detector:
     def __init__(self, model_path):
@@ -96,9 +99,16 @@ def download_file(url, dest_path):
     response = requests.get(url, stream=True)
     with open(dest_path, 'wb') as f:
         f.write(response.content)
+        
+file_id = '1VFKc2sl-pGhdz5-FKQ8ZkajQRBeLPHQB'
 yolo_model_path = "weights/Yolo/Yolov10m_best.pt"
 sam2_config_path = "sam2_hiera_l.yaml"
-sam2_checkpoint_path = "content/checkpoints/sam2_hiera_large.pt"
+sam2_checkpoint_path = "app/checkpoints/sam2_hiera_large.pt"
+if not os.path.exists(sam2_checkpoint_path):
+    gdown.download(f'https://drive.google.com/uc?id={file_id}', destination, quiet=False)
+else:
+    print("File already exists.")
+    
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg"])
 
 if uploaded_file is not None:
